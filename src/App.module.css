@@ -1,6 +1,18 @@
+/* App.module.css */
+
 .container {
-    display: grid !important;
+    display: grid;
     gap: 20px;
     padding: 20px;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-}
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    background-color: #f7f7f7; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  }
+  
+  /* Add a hover effect */
+  .container:hover {
+    transform: scale(1.02); /* Scale up on hover */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+  }
+  

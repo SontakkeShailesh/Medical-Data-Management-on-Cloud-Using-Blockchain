@@ -1,4 +1,4 @@
-export const PATIENT_DATA_LIST_ADDRESS = "0x9B32A6f4c5e2f8D7179a9987E66cb6A65Ca207f0"
+export const PATIENT_DATA_LIST_ADDRESS = "0x4B3bb5D0669f62450F1C7F7fa33b2Bd79469cce8"
 export const PATIENT_DATA_LIST_ABI = [
   {
     "constant": true,

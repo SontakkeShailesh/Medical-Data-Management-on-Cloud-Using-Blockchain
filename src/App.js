@@ -17,6 +17,7 @@ import ShowData from './routes/ShowData'
 import CryptoJS from 'crypto-js'
 import sendToServerForSecondEncryption from './server/sendToServerForSecondEncryption'
 
+
 function App() {
   const [web3, setweb3] = useState()
   const [account, setAccount] = useState('')
@@ -26,20 +27,20 @@ function App() {
   const [patientBioMedList, setPatientBioMedList] = useState([])
   const [patientMedicalDataList, setPatientMedicalDataList] = useState([])
   const [patientBio, setPatientBio] = useState({
-    id: 'PATDHCS2001457',
-    name: 'Vishwas Paikra',
+    id: 'PATDHCS ',
+    name: '',
     birthDate: '22 sep 1998',
-    phoneNumber: '1234565432',
-    _address: 'flat 320 anand complex vaishali nagar bhilai cg',
+    phoneNumber: ' ',
+    _address: ' ',
   })
   const [patientMedicalData, setPatientMedicalData] = useState({
     medReportId: 'MEDREP' + Math.ceil(Math.random() * 1000000000),
-    weight: '158',
-    height: '164',
-    bloodGroup: 'B+',
-    diseaseName: 'Hyper Myopia',
+    weight: ' ',
+    height: '',
+    bloodGroup: ' ',
+    diseaseName: ' ',
     diseaseDescription:
-      'caused by long exposure to harmful artificial blue light',
+      ' ',
     diseaseStartedOn: '1 apr 2016',
   })
 
@@ -57,7 +58,7 @@ function App() {
       SAVE_DATA_LIST_ABI,
       SAVE_DATA_LIST_ADDRESS,
     )
-    // console.log('volla', network, accounts, await patientDataContractCopy.methods.patients(0).call())
+
     setPatientDataContract(patientDataContractCopy)
     setSaveDataContract(saveDataContractCopy)
     // updateList(patientDataContractCopy, accounts[0])
@@ -68,10 +69,7 @@ function App() {
 
   const updateList = async (patientDataContract, acc) => {
     const senders = await patientDataContract.methods.senders(acc).call()
-    // const medicalReports = await patientDataContract.methods.medicalReports(0).call()
-    // let countMedicalReports = await patientDataContract.methods
-    //   .countMedicalReports()
-    //   .call()
+
     let countMedicalReports = senders.patientCount
 
     console.log(countMedicalReports)
@@ -131,43 +129,10 @@ function App() {
     setPatientBioMedList(patientBioMedList)
   }
 
-  // const addUpdatePatientBio = () => {
-  //   patientDataContract.methods
-  //     .addUpdatePatientBio(
-  //       patientBio.name,
-  //       patientBio.birthDate,
-  //       patientBio.phoneNumber,
-  //       patientBio._address,
-  //     )
-  //     .send({ from: account })
-  //     .once('receipt', (receipt) => {
-  //       console.log('saved')
-  //       updateList(patientDataContract, account)
-  //     })
-  // }
 
   const addUpdatePatientMedicalData = () => {
     console.log(patientBio, patientMedicalData)
-    // patientDataContract.methods
-    //   .addMedicalReport(
-    //     patientBio.id,
-    //     patientBio.name,
-    //     patientBio.birthDate,
-    //     patientBio.phoneNumber,
-    //     patientBio._address,
-    //     patientMedicalData.medReportId,
-    //     parseInt(patientMedicalData.weight),
-    //     parseInt(patientMedicalData.height),
-    //     patientMedicalData.bloodGroup,
-    //     patientMedicalData.diseaseName,
-    //     patientMedicalData.diseaseDescription,
-    //     patientMedicalData.diseaseStartedOn,
-    //   )
-    //   .send({ from: account })
-    //   .once('receipt', (receipt) => {
-    //     console.log('saved', receipt)
-    //     updateList(patientDataContract, account)
-    //   })
+
     let JSONStringData = JSON.stringify({patientBio, patientMedicalData})
     let hash = CryptoJS.SHA256(JSONStringData).toString(CryptoJS.enc.Hex)
     console.log(hash)

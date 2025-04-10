@@ -33,7 +33,7 @@ export default function ShowData(props) {
   return (
     <div className={style2.showDataContainer}>
       <Card className={style2.card}>
-        <h2 className={style.h2}>Patient's Medical Data</h2>
+        <h2 className={style.h2}>Medical Data</h2>
         <TableContainer component={Paper}>
           <Table className={style.table} aria-label="simple table">
             <TableHead>

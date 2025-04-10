@@ -34,7 +34,7 @@ export default function AddData(props) {
   return (
     <div className={style.cardContainer}>
       <Card className={style.card} elevation={0}>
-        <h2 className={style.h2}>Patient Bio Data</h2>
+        <h2 className={style.h2}>Medical Records</h2>
         <form className={style.form} noValidate autoComplete="off">
         <TextField
             id="outlined-basic"

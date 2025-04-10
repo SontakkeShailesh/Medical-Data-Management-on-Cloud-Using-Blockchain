@@ -9,15 +9,18 @@
     margin: auto;
 }
 .btn {
-    padding: 12px !important;
-    border: 2px solid !important;
-    color: green !important;
+  padding: 12px !important;
+  border: 2px solid #0eaa14 !important; /* Green border color */
+  background-color: #0db413; /* Green background color */
+  color: #ffffff !important; /* White text color */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 .btnRed {
     color: red !important;
 }
 .h2 {
-    color: cadetblue;
+    color: rgb(95, 160, 95);
     text-transform: uppercase;
     text-align: center;
 }
